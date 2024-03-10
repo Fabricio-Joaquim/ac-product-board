@@ -10,6 +10,9 @@ export default defineConfig({
     alias: {
       // for TypeScript path alias import like : @/x/y/z
       "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@components": fileURLToPath(
+        new URL("./src/components", import.meta.url),
+      ),
     },
   },
   server: {
