@@ -3,18 +3,11 @@ import { FormProvider } from "react-hook-form";
 import { FaAddressBook } from "react-icons/fa";
 
 import { Button } from "@/components/Button";
-import { useGenericForm } from "@/hooks/Form/useGenericForm";
 
-import { LoginModel } from "./model/loginModel";
-import { loginSchema } from "./schema/loginSchema";
+import { useLoginForm } from "./hooks/useLoginForm";
 
-export const Login = () => {
-  const { formProvider, onSubmit } = useGenericForm<LoginModel>(
-    loginSchema,
-    data => {
-      console.log(data);
-    },
-  );
+const Login = () => {
+  const { formProvider, onSubmit } = useLoginForm();
 
   return (
     <div className="flex items-center justify-center min-h-screen flex-col">
@@ -43,3 +36,5 @@ export const Login = () => {
     </div>
   );
 };
+
+export default Login;

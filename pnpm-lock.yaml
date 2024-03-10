@@ -55,9 +55,6 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: ^19.0.3
     version: 19.0.3
-  '@commitlint/cz-commitlint':
-    specifier: ^19.0.3
-    version: 19.0.3(@types/node@20.11.25)(commitizen@4.3.0)(inquirer@9.2.15)(typescript@5.4.2)
   '@cypress/vite-dev-server':
     specifier: ^5.0.7
     version: 5.0.7
@@ -109,6 +106,9 @@ devDependencies:
   cypress:
     specifier: ^13.6.6
     version: 13.6.6
+  cz-conventional-changelog:
+    specifier: ^3.3.0
+    version: 3.3.0(@types/node@20.11.25)(typescript@5.4.2)
   eslint:
     specifier: ^8.57.0
     version: 8.57.0
@@ -1488,26 +1488,6 @@ packages:
       ajv: 8.12.0
     dev: true
 
-  /@commitlint/cz-commitlint@19.0.3(@types/node@20.11.25)(commitizen@4.3.0)(inquirer@9.2.15)(typescript@5.4.2):
-    resolution: {integrity: sha512-DarzAFzoE5dAiEgVikE7odwSglfvxN1GfCg+R/nwsCZKNS3j7dzEy85NQMmQ6C5y2YmbQAjZ0/nM47W8gRzkzw==}
-    engines: {node: '>=v18'}
-    peerDependencies:
-      commitizen: ^4.0.3
-      inquirer: ^9.0.0
-    dependencies:
-      '@commitlint/ensure': 19.0.3
-      '@commitlint/load': 19.0.3(@types/node@20.11.25)(typescript@5.4.2)
-      '@commitlint/types': 19.0.3
-      chalk: 5.3.0
-      commitizen: 4.3.0(@types/node@20.11.25)(typescript@5.4.2)
-      inquirer: 9.2.15
-      lodash.isplainobject: 4.0.6
-      word-wrap: 1.2.5
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
-    dev: true
-
   /@commitlint/ensure@19.0.3:
     resolution: {integrity: sha512-SZEpa/VvBLoT+EFZVb91YWbmaZ/9rPH3ESrINOl0HD2kMYsjvl0tF7nMHh0EpTcv4+gTtZBAe1y/SS6/OhfZzQ==}
     engines: {node: '>=v18'}
@@ -2240,13 +2220,6 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
-
-  /@ljharb/through@2.3.12:
-    resolution: {integrity: sha512-ajo/heTlG3QgC8EGP6APIejksVAYt4ayz4tqoP3MolFELzcH1x1fzwEYRJTPO0IELutZ5HQ0c26/GqAYy79u3g==}
-    engines: {node: '>= 0.4'}
-    dependencies:
-      call-bind: 1.0.7
     dev: true
 
   /@nodelib/fs.scandir@2.1.5:
@@ -3776,11 +3749,6 @@ packages:
   /cli-width@3.0.0:
     resolution: {integrity: sha512-FxqpkPPwu1HjuN93Omfm4h8uIanXofW0RxVEW3k5RKx+mJJYSthzNhp32Kzxxy3YAEZ/Dc/EWN1vZRY0+kOhbw==}
     engines: {node: '>= 10'}
-    dev: true
-
-  /cli-width@4.1.0:
-    resolution: {integrity: sha512-ouuZd4/dm2Sw5Gmqy6bGyNNNe1qt9RpmxveLSO7KcgsTnU7RXfsw+/bukWGo1abgBiMAic068rclZsO4IWmmxQ==}
-    engines: {node: '>= 12'}
     dev: true
 
   /cliui@8.0.1:
@@ -5800,27 +5768,6 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /inquirer@9.2.15:
-    resolution: {integrity: sha512-vI2w4zl/mDluHt9YEQ/543VTCwPKWiHzKtm9dM2V0NdFcqEexDAjUHzO1oA60HRNaVifGXXM1tRRNluLVHa0Kg==}
-    engines: {node: '>=18'}
-    dependencies:
-      '@ljharb/through': 2.3.12
-      ansi-escapes: 4.3.2
-      chalk: 5.3.0
-      cli-cursor: 3.1.0
-      cli-width: 4.1.0
-      external-editor: 3.1.0
-      figures: 3.2.0
-      lodash: 4.17.21
-      mute-stream: 1.0.0
-      ora: 5.4.1
-      run-async: 3.0.0
-      rxjs: 7.8.1
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
-      wrap-ansi: 6.2.0
-    dev: true
-
   /internal-slot@1.0.7:
     resolution: {integrity: sha512-NGnrKwXzSms2qUUih/ILZ5JBqNTSa1+ZmP6flaIp6KmSElgE9qdndzS3cqjrDovwFdmwsGsLdeFgB6suw+1e9g==}
     engines: {node: '>= 0.4'}
@@ -7153,11 +7100,6 @@ packages:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
     dev: true
 
-  /mute-stream@1.0.0:
-    resolution: {integrity: sha512-avsJQhyd+680gKXyG/sQc0nXaC6rBkPOfyHYcFb9+hdkqQkR9bdnkJ0AMZhke0oesPqIO+mFFJ+IdBc7mst4IA==}
-    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
-    dev: true
-
   /mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
     dependencies:
@@ -8071,11 +8013,6 @@ packages:
 
   /run-async@2.4.1:
     resolution: {integrity: sha512-tvVnVv01b8c1RrA6Ep7JkStj85Guv/YrMcwqYQnwjsAS2cTmmPGBBjAjpCW7RrSodNSoE2/qg9O4bceNvUuDgQ==}
-    engines: {node: '>=0.12.0'}
-    dev: true
-
-  /run-async@3.0.0:
-    resolution: {integrity: sha512-540WwVDOMxA6dN6We19EcT9sc3hkXPw5mzRNGM3FkdN/vtE9NFvj5lFAPNwUDmJjXidm3v7TC1cTE7t17Ulm1Q==}
     engines: {node: '>=0.12.0'}
     dev: true
 
