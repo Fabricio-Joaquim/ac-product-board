@@ -1,39 +1,35 @@
-import { InputDefault } from "@components/Input/InputDefault";
-import { FormProvider } from "react-hook-form";
-import { FaAddressBook } from "react-icons/fa";
+import Logo from "@assets/logo.png";
+import { Link } from "react-router-dom";
 
-import { Button } from "@/components/Button";
+import { HomeLayer } from "@/components/Layer/HomeLayer";
+import { RouterEnum } from "@/router/enum/routerEnum";
 
-import { useLoginForm } from "./hooks/useLoginForm";
+import { LoginForm } from "./form/loginForm";
 
 const Login = () => {
-  const { formProvider, onSubmit } = useLoginForm();
-
+  const classLine = "divide-y-2 h-[2px] w-1/2 bg-coolGray-300";
   return (
-    <div className="flex items-center justify-center min-h-screen flex-col">
-      <h1 className="text-red-700 text-4xl">
-        Faça login para começar a gerenciar seus produtos.
-      </h1>
-      <FormProvider {...formProvider}>
-        <form onSubmit={onSubmit}>
-          <InputDefault
-            placeholder="seuemail@email.com"
-            label="Email"
-            name="email"
-          />
-          <InputDefault
-            type="password"
-            placeholder="Digite sua senha..."
-            label="Senha"
-            name="password"
-          />
-          <Button.Root type="submit">
-            <Button.IconLeft icon={FaAddressBook} />
-            asasa
-          </Button.Root>
-        </form>
-      </FormProvider>
-    </div>
+    <HomeLayer>
+      <div className="flex min-h-screen flex-col w-96 justify-center">
+        <h1 className="text-4xl text-coolGray-900">Olá! 👋</h1>
+        <h2 className="text-blueGray-700 text-xl w-72 leading-8 mb-8 mt-4">
+          Faça login para começar a gerenciar seus produtos.
+        </h2>
+        <LoginForm />
+        <div className="flex w-full items-center gap-x-2 justify-center mt-10">
+          <span className={classLine} />
+          Ou
+          <span className={classLine} />
+        </div>
+        <p className="mt-12 self-center mb-16">
+          Não possui conta?{" "}
+          <Link className="text-indigo-600" to={RouterEnum.REGISTER_USER}>
+            Cadastra-se
+          </Link>
+        </p>
+        <img alt="logo" src={Logo} className="w-44 h-14 mt-10 self-center" />
+      </div>
+    </HomeLayer>
   );
 };
 

@@ -1,30 +1,31 @@
 import { lazy } from "react";
 
+import { RouterEnum } from "./enum/routerEnum";
 import { RouteModel } from "./model/routerModel";
 
 export const routes: RouteModel[] = [
   {
-    path: "/",
+    path: RouterEnum.LOGIN,
     element: lazy(() => import("../pages/Login/Login")),
     isPrivate: false,
   },
   {
-    path: "/home",
+    path: RouterEnum.DASHBOARD,
     element: lazy(() => import("../pages/Home/DashboardPage")),
     isPrivate: true,
   },
   {
-    path: "/cadastro/usuario",
+    path: RouterEnum.REGISTER_USER,
     element: lazy(() => import("../pages/RegisterUser/Register")),
     isPrivate: false,
   },
   {
-    path: "*",
+    path: RouterEnum.NOT_FOUND,
     element: lazy(() => import("../pages/Login/Login")),
     isPrivate: false,
   },
   {
-    path: "/cadastro/produto",
+    path: RouterEnum.CREATE_PRODUCT,
     element: lazy(() => import("../pages/RegisterProduct/RegisterProduct")),
     isPrivate: true,
   },
