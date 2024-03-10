@@ -6,10 +6,10 @@ import { AuthRouters } from "./router/AuthRouter";
 export default function App() {
   return (
     <>
+      <Loading />
       <BrowserRouter>
         <AuthRouters />
       </BrowserRouter>
-      <Loading />
     </>
   );
 }

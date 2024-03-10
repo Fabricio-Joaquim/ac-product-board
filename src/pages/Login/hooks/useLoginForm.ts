@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import { RouterEnum } from "@/router/enum/routerEnum";
 import { apiService } from "@/service/base";
 import { useUser } from "@/store/hook/useUser";
 
@@ -22,7 +23,7 @@ export const useLoginForm = () => {
       .post<LoginResponse>("/auth/login", data)
       .then(({ data }) => {
         login(data.access_token);
-        navigate("/home");
+        navigate(RouterEnum.DASHBOARD);
       })
       .catch(() =>
         toast("Erro ao fazer login, tente novamente.", { type: "error" }),
