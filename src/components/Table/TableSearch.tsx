@@ -13,7 +13,7 @@ export const TableSearch = ({
   search,
   handlerChangeSearch,
 }: TableSearchProps) => (
-  <div className="flex justify-between">
+  <div className="flex justify-between items-center">
     <div className="flex gap-0 md:gap-2 justify-center w-56 bg-white rounded-lg h-11 md:h-auto">
       <input
         name="search"
@@ -35,11 +35,11 @@ export const TableSearch = ({
         </button>
       )}
     </div>
-    <p className="text-trueGray-500">
-      Última atualização:
-      {format(new Date(), "PPpp", {
+    <p className="text-trueGray-500 font-inter text-[10px]">
+      Última atualização:{" "}
+      {format(new Date(), "dd MMM yyyy hh:mm a", {
         locale: ptBR,
-      }).replace(",", "")}
+      })}
     </p>
   </div>
 );

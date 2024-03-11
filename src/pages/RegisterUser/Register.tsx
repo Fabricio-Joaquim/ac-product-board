@@ -7,7 +7,7 @@ import { RegisterForm } from "./form/RegisterForm";
 const RegisterPage = () => {
   return (
     <HomeLayer>
-      <div className="flex min-h-screen flex-col w-96 justify-center">
+      <div className="flex min-h-screen font-poppins font-normal flex-col w-96 justify-center">
         <h1 className="text-4xl text-coolGray-900">Cadastre-se</h1>
         <h2 className="text-blueGray-700 text-xl w-80 leading-8 mb-8 mt-4">
           Preencha os campos para concluir seu cadastro

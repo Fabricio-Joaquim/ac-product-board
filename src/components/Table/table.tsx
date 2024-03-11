@@ -92,11 +92,11 @@ function TableGeneric({ headers, data }: ITableGenericProps) {
       <table className="table-fixed w-full rounded-lg mt-7">
         <Table.Header table={table} />
         <Table.Body table={table} />
-        <tfoot className="bg-gray-100">
-          <Table.Footer table={table} />
-          <Table.LimitSize table={table} sizeOptions={sizeOptions} />
-        </tfoot>
       </table>
+      <div className="bg-gray-100 flex justify-center gap-x-3 mt-5">
+        <Table.Footer table={table} />
+        <Table.LimitSize table={table} sizeOptions={sizeOptions} />
+      </div>
     </div>
   );
 }

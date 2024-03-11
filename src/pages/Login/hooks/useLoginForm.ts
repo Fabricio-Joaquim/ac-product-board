@@ -1,8 +1,8 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
+import { useToast } from "@/hooks/toast/useToast";
 import { RouterEnum } from "@/router/enum/routerEnum";
 import { apiService } from "@/service/base";
 import { useUser } from "@/store/hook/useUser";
@@ -12,6 +12,7 @@ import { loginSchema } from "../schema/loginSchema";
 
 export const useLoginForm = () => {
   const { login } = useUser();
+  const { toast } = useToast();
   const navigate = useNavigate();
 
   const formProvider = useForm({
@@ -25,9 +26,7 @@ export const useLoginForm = () => {
         login(data.access_token);
         navigate(RouterEnum.DASHBOARD);
       })
-      .catch(() =>
-        toast("Erro ao fazer login, tente novamente.", { type: "error" }),
-      );
+      .catch(() => toast("Usuário ou senha inválidos", "error"));
   };
   return {
     formProvider,

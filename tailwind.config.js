@@ -3,6 +3,11 @@ module.exports = {
   content: ["./src/**/*.{html,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        "inter":['Inter', "sans-serif"],
+        "poppins": "Poppins",
+        "roboto": ["Roboto", "sans-serif"],
+      },
       colors:{
         blueGray:{
           50: '#f8fafc',

@@ -2,8 +2,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
+import { useToast } from "@/hooks/toast/useToast";
 import { RouterEnum } from "@/router/enum/routerEnum";
 import { apiService } from "@/service/base";
 
@@ -12,8 +12,8 @@ import { productRegisterSchema } from "../schema/productSchema";
 
 export const useRegisterProductForm = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
   const productForm: RegisterProductModel = useLocation().state;
-  console.log(productForm);
 
   const formProvider = useForm<RegisterProductModel>({
     resolver: yupResolver(productRegisterSchema),
@@ -28,10 +28,8 @@ export const useRegisterProductForm = () => {
       ),
     onSuccess: () => {
       toast(
-        productForm?.id
-          ? "Produto atualizado com sucesso"
-          : "Produto cadastrado com sucesso",
-        { type: "success" },
+        `Produto ${productForm?.id ? "atualizado" : "cadastrado"} com sucesso!`,
+        "success",
       );
       navigate(RouterEnum.DASHBOARD);
       formProvider.reset();

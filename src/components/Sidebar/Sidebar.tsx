@@ -1,6 +1,7 @@
 import Logo from "@assets/logo.png";
-import { BsFillBagCheckFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+
+import { sidebarLink } from "./mock/sidebarLink";
 
 export const Sidebar = () => {
   return (
@@ -9,13 +10,16 @@ export const Sidebar = () => {
         <img src={Logo} alt="Logo" className="w-32 h-9 mt-6" />
       </div>
       <div className="flex flex-col items-center p-4 mt-6">
-        <Link
-          to={""}
-          className="w-full h-14 bg-trueGray-200 text-black font-medium rounded-xl mb-4 items-baseline pt-4 px-5 flex gap-x-2"
-        >
-          <BsFillBagCheckFill className="text-red-900 text-base" size={20} />
-          Produtos
-        </Link>
+        {sidebarLink.map(Dashboard => (
+          <Link
+            key={Dashboard.title}
+            to={Dashboard.link}
+            className="w-full h-14 bg-trueGray-200 font-poppins text-base text-black font-medium rounded-xl mb-4 items-baseline pt-4 px-5 flex gap-x-2"
+          >
+            <Dashboard.Icon className="text-red-900 text-base" size={20} />
+            {Dashboard.title}
+          </Link>
+        ))}
       </div>
     </div>
   );

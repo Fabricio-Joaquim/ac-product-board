@@ -9,7 +9,7 @@ import {
 import { ButtonPagination } from "./components/ButtonPagination/ButtonPagination";
 
 export const TableFooter = ({ table }: { table: Table<unknown> }) => (
-  <tr className="flex items-center gap-1 mt-2 justify-center">
+  <div className="flex items-center gap-1 mt-2 justify-center">
     <ButtonPagination
       aria-label="First page"
       disabled={!table.getCanPreviousPage()}
@@ -39,5 +39,5 @@ export const TableFooter = ({ table }: { table: Table<unknown> }) => (
       icon={<MdOutlineKeyboardDoubleArrowRight size={20} />}
       onClick={() => table.setPageIndex(table.getPageCount() - 1)}
     />
-  </tr>
+  </div>
 );

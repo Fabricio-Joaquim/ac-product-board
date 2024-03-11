@@ -10,9 +10,9 @@ const Login = () => {
   const classLine = "divide-y-2 h-[2px] w-1/2 bg-coolGray-300";
   return (
     <HomeLayer>
-      <div className="flex min-h-screen flex-col w-96 justify-center">
-        <h1 className="text-4xl text-coolGray-900">Olá! 👋</h1>
-        <h2 className="text-blueGray-700 text-xl w-72 leading-8 mb-8 mt-4">
+      <div className="flex min-h-screen flex-col w-96 font-poppins justify-center">
+        <h1 className="text-4xl text-coolGray-900 font-normal">Olá! 👋</h1>
+        <h2 className="text-blueGray-700 text-xl font-normal w-72 leading-8 mb-8 mt-4">
           Faça login para começar a gerenciar seus produtos.
         </h2>
         <LoginForm />
@@ -21,7 +21,7 @@ const Login = () => {
           Ou
           <span className={classLine} />
         </div>
-        <p className="mt-12 self-center mb-16">
+        <p className="mt-12 self-center mb-16 font-roboto">
           Não possui conta?{" "}
           <Link className="text-indigo-600" to={RouterEnum.REGISTER_USER}>
             Cadastra-se

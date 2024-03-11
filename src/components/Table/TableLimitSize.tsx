@@ -7,10 +7,10 @@ export const TableLimitSize = ({
   table: Table<unknown>;
   sizeOptions: number[];
 }) => (
-  <td className="flex md:flex-row flex-col">
+  <div className="flex md:flex-row flex-col items-center mt-2">
     <select
       id="limit"
-      className="bg-gray-200 border-gray-300 px-4 py-2 text-gray-700 border-2 rounded"
+      className="bg-red-500 border-gray-300 text-white border-2 px-2 py-[10px] rounded-lg appearance-none "
       value={table.getState().pagination.pageSize}
       onChange={e => {
         table.setPageSize(Number(e.target.value));
@@ -22,5 +22,5 @@ export const TableLimitSize = ({
         </option>
       ))}
     </select>
-  </td>
+  </div>
 );

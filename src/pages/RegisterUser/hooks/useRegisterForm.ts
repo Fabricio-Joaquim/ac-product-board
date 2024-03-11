@@ -2,8 +2,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
+import { useToast } from "@/hooks/toast/useToast";
 import { RouterEnum } from "@/router/enum/routerEnum";
 import { apiService } from "@/service/base";
 
@@ -15,12 +15,12 @@ export const useRegisterForm = () => {
     resolver: yupResolver(registerSchema),
   });
   const navigate = useNavigate();
-
+  const { toast } = useToast();
   const mutation = useMutation({
     mutationFn: (data: RegisterModel) =>
       apiService.post("/auth/register", data),
     onSuccess: () => {
-      toast.success("Usuário cadastrado com sucesso", { type: "success" });
+      toast("Usuário cadastrado com sucesso!", "success");
       navigate(RouterEnum.LOGIN);
     },
   });

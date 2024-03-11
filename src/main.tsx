@@ -1,11 +1,10 @@
 import "./main.css";
-import "react-toastify/dist/ReactToastify.css";
+import "sweetalert2/src/sweetalert2.scss";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
-import { ToastContainer } from "react-toastify";
 import { PersistGate } from "redux-persist/integration/react";
 
 import App from "./App";
@@ -21,7 +20,6 @@ root.render(
       <PersistGate persistor={persistor} loading={null}>
         <QueryClientProvider client={queryClient}>
           <App />
-          <ToastContainer />
         </QueryClientProvider>
       </PersistGate>
     </Provider>

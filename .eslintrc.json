@@ -27,6 +27,7 @@
     "simple-import-sort/exports": "warn",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
     "react/jsx-sort-props": [
       "warn",
       {

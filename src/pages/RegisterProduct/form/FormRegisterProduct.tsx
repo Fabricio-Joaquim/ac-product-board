@@ -17,11 +17,36 @@ export const FormRegisterProduct = () => {
             cadastrar.
           </p>
           <div className="grid grid-cols-2 gap-y-6 gap-x-4 mt-6">
-            <InputDefault name="dsProduto" label="Descrição" />
-            <InputDefault name="dsCategoria" label="Categoria" />
-            <InputDefault name="cdProduto" label="Código" />
-            <InputDefault name="vlProduto" label="Valor" />
-            <InputDefault name="qtdProduto" label="Quantidade" />
+            <InputDefault
+              name="dsProduto"
+              className="font-poppins font-semibold"
+              label="Descrição"
+              placeholder="Descrição do produto"
+            />
+            <InputDefault
+              name="dsCategoria"
+              className="font-poppins font-semibold"
+              label="Categoria"
+              placeholder="Categoria do produto"
+            />
+            <InputDefault
+              name="cdProduto"
+              className="font-poppins font-semibold"
+              label="Código"
+              placeholder="Código do produto"
+            />
+            <InputDefault
+              name="vlProduto"
+              className="font-poppins font-semibold"
+              label="Valor"
+              placeholder="Valor do produto"
+            />
+            <InputDefault
+              name="qtdProduto"
+              className="font-poppins font-semibold"
+              label="Quantidade"
+              placeholder="Quantidade do produto"
+            />
           </div>
         </div>
         <div className="flex justify-between items-center mt-14 p-6 rounded-xl bg-white">

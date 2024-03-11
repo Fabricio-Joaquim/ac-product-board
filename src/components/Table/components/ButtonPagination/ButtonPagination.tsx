@@ -17,7 +17,7 @@ export const ButtonPagination = ({
 }: IButtonPaginationProps) => (
   <button
     className={twMerge(
-      "border rounded-xl px-2 py-3 bg-red-200 cursor-pointer hover:bg-red-50 duration-300 hover:border-1 hover:border-black",
+      "border rounded-xl px-2 py-3 bg-red-200 cursor-pointer shadow-sm hover:bg-red-50 duration-300 hover:border-1 hover:border-black text-white hover:text-slate-400",
       className,
     )}
     disabled={disabled}
