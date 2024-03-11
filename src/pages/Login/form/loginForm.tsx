@@ -1,7 +1,6 @@
+import { Button } from "@components/Button/Button";
 import { FormProvider } from "react-hook-form";
-import { FaAddressBook } from "react-icons/fa";
 
-import { Button } from "@/components/Button";
 import { InputDefault } from "@/components/Input/InputDefault";
 
 import { useLoginForm } from "../hooks/useLoginForm";
@@ -23,9 +22,7 @@ export const LoginForm = () => {
           label="Senha"
           name="password"
         />
-        <Button.Root className="mt-6" type="submit" title="Login">
-          <Button.IconLeft icon={FaAddressBook} />
-        </Button.Root>
+        <Button className="mt-6" type="submit" title="Login" />
       </form>
     </FormProvider>
   );

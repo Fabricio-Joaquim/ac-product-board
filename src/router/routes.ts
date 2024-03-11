@@ -29,4 +29,9 @@ export const routes: RouteModel[] = [
     element: lazy(() => import("../pages/RegisterProduct/RegisterProduct")),
     isPrivate: true,
   },
+  {
+    path: `${RouterEnum.UPDATE_PRODUCT}/:id`,
+    element: lazy(() => import("../pages/RegisterProduct/RegisterProduct")),
+    isPrivate: true,
+  },
 ];

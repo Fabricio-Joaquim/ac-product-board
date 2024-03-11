@@ -1,7 +1,6 @@
+import { Button } from "@components/Button/Button";
+import { InputDefault } from "@components/Input/InputDefault";
 import { FormProvider } from "react-hook-form";
-
-import { Button } from "@/components/Button";
-import { InputDefault } from "@/components/Input/InputDefault";
 
 import { useRegisterProductForm } from "../hooks/useRegisterProductForm";
 
@@ -32,7 +31,7 @@ export const FormRegisterProduct = () => {
               Confira os dados informados antes de cadastrar o produto
             </p>
           </div>
-          <Button.Root
+          <Button
             title="Cadastrar"
             className="w-36 font-bold h-14"
             type="submit"
