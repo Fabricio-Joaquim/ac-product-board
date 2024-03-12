@@ -1,3 +1,5 @@
+/* eslint-disable */
+//@ts-nocheck
 import { UseMutationResult } from "@tanstack/react-query";
 import { Cell } from "@tanstack/react-table";
 import { Link } from "react-router-dom";

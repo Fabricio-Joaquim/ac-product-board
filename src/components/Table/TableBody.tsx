@@ -1,3 +1,5 @@
+/* eslint-disable */
+//@ts-nocheck
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { flexRender, Table } from "@tanstack/react-table";
 

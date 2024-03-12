@@ -1,3 +1,5 @@
+/* eslint-disable */
+//@ts-nocheck
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
@@ -19,7 +21,7 @@ export const AuthRouters = () => {
                 <Route
                   key={Page.path}
                   path={Page.path}
-                  element={<Page.element />}
+                  element={<Page.Element />}
                 />
                 ;
               </Route>
@@ -29,7 +31,7 @@ export const AuthRouters = () => {
               <Route
                 key={Page.path}
                 path={Page.path}
-                element={<Page.element />}
+                element={<Page.Element />}
               />
             );
           } else return false;

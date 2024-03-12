@@ -4,7 +4,7 @@ export const useToast = () => {
   const toast = (
     title: string,
     icon: "success" | "error" | "warning" | "info" | "question",
-  ): Promise<unknown> => {
+  ) => {
     Swal.fire({
       toast: true,
       position: "top-end",
