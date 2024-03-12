@@ -19,6 +19,10 @@
 - [SweetAlert2](https://sweetalert2.github.io)
 - [Date-fns](https://date-fns.org)
 
+## Notes
+
+### Api used in this project is [fake-api-jwt-json-server](https://github.com/techiediaries/fake-api-jwt-json-server)
+
 ## Commands
 
 ### Lint commands
@@ -28,12 +32,13 @@ npm run lint
 ```
 
 ### .env file
+
 ```bash
 VITE_API_URL=http://localhost:8000
 ```
 
-
 ### Build commands
+
 ```bash
 npm run build
 ```
