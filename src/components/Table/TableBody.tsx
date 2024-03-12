@@ -1,11 +1,25 @@
-/* eslint-disable */
-//@ts-nocheck
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { flexRender, Table } from "@tanstack/react-table";
+
+import { KeyServiceEnum } from "@/enums/KeyServiceEnum";
+import { useToast } from "@/hooks/toast/useToast";
+import { apiService } from "@/service/base";
 
 import { columnsRender } from "./components";
 import { Row } from "./Row";
 
 export const TableBody = ({ table }: { table: Table<unknown> }) => {
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (id: number) => apiService.delete("/products/" + id),
+    onSuccess: () => {
+      toast("Produto excluído com sucesso", "success");
+      queryClient.invalidateQueries({ queryKey: [KeyServiceEnum.PRODUCTS] });
+    },
+  });
+
   return (
     <tbody>
       {table.getRowModel().rows.map(row => {
@@ -19,7 +33,7 @@ export const TableBody = ({ table }: { table: Table<unknown> }) => {
                   {cell.getIsPlaceholder()
                     ? null
                     : cellRenderer
-                      ? cellRenderer(cell)
+                      ? cellRenderer(cell, mutation)
                       : flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext(),

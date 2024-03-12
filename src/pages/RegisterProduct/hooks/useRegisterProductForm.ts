@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/toast/useToast";
 import { RouterEnum } from "@/router/enum/routerEnum";
 import { apiService } from "@/service/base";
+import { compareChanges } from "@/utils/objectData";
 
 import { RegisterProductModel } from "../model/registerProductModel";
 import { productRegisterSchema } from "../schema/productSchema";
@@ -23,7 +24,7 @@ export const useRegisterProductForm = () => {
   const mutation = useMutation({
     mutationFn: ([data, isUpdate]: [RegisterProductModel, boolean]) =>
       apiService[isUpdate ? "patch" : "post"](
-        `/products${isUpdate ? `/${data.id}` : ""}`,
+        `/products${isUpdate ? `/${productForm.id}` : ""}`,
         data,
       ),
     onSuccess: () => {
@@ -38,6 +39,11 @@ export const useRegisterProductForm = () => {
 
   const onSubmit = (data: RegisterProductModel) => {
     data.dtCadastro = data.dtCadastro ?? new Date().toISOString();
+    if (productForm?.id) {
+      data = compareChanges(productForm, data) as RegisterProductModel;
+      delete data.dtCadastro;
+    }
+
     mutation.mutate([data, Boolean(productForm?.id)]);
   };
 

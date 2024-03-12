@@ -1,28 +1,18 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { UseMutationResult } from "@tanstack/react-query";
 import { Cell } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 
-import { KeyServiceEnum } from "@/enums/KeyServiceEnum";
 import { useToast } from "@/hooks/toast/useToast";
 import { RouterEnum } from "@/router/enum/routerEnum";
-import { apiService } from "@/service/base";
 
-const ActionColumnRender = (cell: Cell<unknown, unknown>) => {
+const ActionColumnRender = (
+  cell: Cell<unknown, unknown>,
+  mutation: UseMutationResult<unknown>,
+) => {
   const tailwindMerge =
     "text-white border text-center py-1 rounded-xl font-bold text-xs px-2";
-  const { toastDialog, toast } = useToast();
-  const queryClient = useQueryClient();
-
-  const mutation = useMutation({
-    mutationFn: (id: number) => apiService.delete("/products/" + id),
-    onSuccess: () => {
-      toast("Produto excluído com sucesso", "success").then(() =>
-        queryClient.invalidateQueries({ queryKey: [KeyServiceEnum.PRODUCTS] }),
-      );
-    },
-  });
-
+  const { toastDialog } = useToast();
   return (
     <div className="flex gap-x-2 gap-y-2 md:flex-col lg:flex-row">
       <Link
