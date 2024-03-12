@@ -1,11 +1,13 @@
 import { Button } from "@components/Button/Button";
 import { InputDefault } from "@components/Input/InputDefault";
 import { FormProvider } from "react-hook-form";
+import { useParams } from "react-router-dom";
 
 import { useRegisterProductForm } from "../hooks/useRegisterProductForm";
 
 export const FormRegisterProduct = () => {
   const { formProvider, onSubmit } = useRegisterProductForm();
+  const { id } = useParams();
 
   return (
     <FormProvider {...formProvider}>
@@ -53,11 +55,12 @@ export const FormRegisterProduct = () => {
           <div className="w-9/12">
             <p className="font-bold text-xl">Confirmação</p>
             <p className="text-blueGray-400 text-sm">
-              Confira os dados informados antes de cadastrar o produto
+              Confira os dados informados antes de{" "}
+              {id ? "atualizar" : "cadastrar"} o produto
             </p>
           </div>
           <Button
-            title="Cadastrar"
+            title={id ? "Atualizar" : "Cadastrar"}
             className="w-36 font-bold h-14"
             type="submit"
           />

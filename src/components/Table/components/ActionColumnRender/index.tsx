@@ -20,7 +20,7 @@ const ActionColumnRender = (
       <Link
         to={`${RouterEnum.UPDATE_PRODUCT}/${cell.row.original.id}`}
         state={cell.row.original}
-        className={twMerge(tailwindMerge, "bg-blue-600")}
+        className={twMerge(tailwindMerge, "bg-violet-700")}
       >
         Editar
       </Link>

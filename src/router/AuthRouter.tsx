@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { BoardLayer } from "@/components/Layer/BoardLayer";
+import { MainLoading } from "@/components/Loading/Loading";
 import { useUser } from "@/store/hook/useUser";
 
 import { routes as pages } from "./routes";
@@ -12,7 +13,7 @@ export const AuthRouters = () => {
   const { user } = useUser();
 
   return (
-    <Suspense fallback={<div>Carregando...</div>}>
+    <Suspense fallback={<MainLoading />}>
       <Routes>
         {pages.map(Page => {
           if (Page.isPrivate && user.accessToken) {
