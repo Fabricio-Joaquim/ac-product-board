@@ -39,7 +39,6 @@ export const useToast = () => {
         isDenied: boolean;
         isDismissed: boolean;
       }) => {
-        console.log(result);
         if (result.isConfirmed) {
           onConfirm();
         }

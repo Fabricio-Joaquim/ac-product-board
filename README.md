@@ -8,8 +8,16 @@
 - [Cypress](https://www.cypress.io)
 - [ESLint](https://eslint.org)
 - [Prettier](https://prettier.io)
-- [Polyfills](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy#readme)
-
+- [Tailwind CSS](https://tailwindcss.com)
+- [React Query](https://react-query.tanstack.com)
+- [React Hook Form](https://react-hook-form.com)
+- [React Router](https://reactrouter.com)
+- [Axios](https://axios-http.com)
+- [React Icons](https://react-icons.github.io/react-icons)
+- [Redux Toolkit](https://redux-toolkit.js.org)
+- [Yup]()
+- [SweetAlert2](https://sweetalert2.github.io)
+- [Date-fns](https://date-fns.org)
 
 ## Commands
 
@@ -19,8 +27,13 @@
 npm run lint
 ```
 
-### Build commands
+### .env file
+```bash
+VITE_API_URL=http://localhost:8000
+```
 
+
+### Build commands
 ```bash
 npm run build
 ```
@@ -35,13 +48,13 @@ npm run serve
 
 - Run unit tests and watch
   ```bash
-  npm run test:unit
+  npm run test:unit #not USE
   ```
-- Run unit tests with coverage
+- Run unit tests with coverage #not USE
   ```bash
-  npm run test:unit:coverage
+  npm run test:unit:coverage #not USE
   ```
 - Run e2e tests
   ```bash
-  npm run test:e2e
+  npm run test:e2e:ci
   ```
