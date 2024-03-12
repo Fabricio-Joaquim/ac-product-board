@@ -16,7 +16,7 @@ export const FormRegisterProduct = () => {
             Favor inserir as informações relativas ao produto que deseja
             cadastrar.
           </p>
-          <div className="grid grid-cols-2 gap-y-6 gap-x-4 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4 mt-6">
             <InputDefault
               name="dsProduto"
               className="font-poppins font-semibold"

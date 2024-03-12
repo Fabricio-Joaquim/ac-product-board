@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { setAccessToken } from "../slice/userSlice";
+import { setAccessToken, setSidebar } from "../slice/userSlice";
 import { RootState } from "../store";
 
 export function useUser() {
@@ -14,5 +14,10 @@ export function useUser() {
     dispatch(setAccessToken(accessToken));
   };
 
-  return { user, logout, login };
+  const updateSidebar = (sideBar?: boolean) => {
+    dispatch(setSidebar(sideBar ?? !user.sidebarActive));
+    if (window.innerWidth > 640) dispatch(setSidebar(false));
+  };
+
+  return { user, logout, login, updateSidebar };
 }

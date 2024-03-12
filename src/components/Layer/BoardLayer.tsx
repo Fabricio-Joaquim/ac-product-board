@@ -1,6 +1,7 @@
 import { Sidebar } from "@components/Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
 
+import { RouterEnum } from "@/router/enum/routerEnum";
 import { apiService } from "@/service/base";
 import { useUser } from "@/store/hook/useUser";
 
@@ -20,7 +21,7 @@ export const BoardLayer = () => {
     },
     error => {
       if (error.response?.status === 401) {
-        window.location.href = "/login";
+        window.location.href = RouterEnum.LOGIN;
       }
       return Promise.reject(error);
     },
@@ -31,7 +32,7 @@ export const BoardLayer = () => {
       <Sidebar />
       <div className="w-full h-full">
         <Header />
-        <div className="min-w-full min-h-full bg-trueGray-100 p-4">
+        <div className="min-w-full min-h-full bg-trueGray-100 p-1 md:p-4">
           <Outlet />
         </div>
       </div>

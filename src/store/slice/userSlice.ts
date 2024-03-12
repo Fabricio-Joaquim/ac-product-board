@@ -4,6 +4,7 @@ import { UserModel } from "../model/userModel";
 
 const initialState: UserModel = {
   accessToken: "",
+  sidebarActive: false,
 };
 
 export const userSlice = createSlice({
@@ -13,9 +14,12 @@ export const userSlice = createSlice({
     setAccessToken: (state, action: PayloadAction<string>) => {
       state.accessToken = action.payload;
     },
+    setSidebar: (state, action: PayloadAction<boolean>) => {
+      state.sidebarActive = action.payload;
+    },
   },
 });
 
-export const { setAccessToken } = userSlice.actions;
+export const { setAccessToken, setSidebar } = userSlice.actions;
 
 export default userSlice.reducer;

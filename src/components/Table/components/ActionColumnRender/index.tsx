@@ -1,6 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Cell } from "@tanstack/react-table";
-import React from "react"; // Importe o React
 import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 
@@ -11,20 +10,21 @@ import { apiService } from "@/service/base";
 
 const ActionColumnRender = (cell: Cell<unknown, unknown>) => {
   const tailwindMerge =
-    "text-white border py-1 rounded-xl font-bold text-xs px-2";
+    "text-white border text-center py-1 rounded-xl font-bold text-xs px-2";
   const { toastDialog, toast } = useToast();
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: (id: number) => apiService.delete("/products/" + id),
     onSuccess: () => {
-      toast("Produto excluído com sucesso", "success");
-      queryClient.invalidateQueries({ queryKey: [KeyServiceEnum.PRODUCTS] });
+      toast("Produto excluído com sucesso", "success").then(() =>
+        queryClient.invalidateQueries({ queryKey: [KeyServiceEnum.PRODUCTS] }),
+      );
     },
   });
 
   return (
-    <div className="flex gap-x-2">
+    <div className="flex gap-x-2 gap-y-2 md:flex-col lg:flex-row">
       <Link
         to={`${RouterEnum.UPDATE_PRODUCT}/${cell.row.original.id}`}
         state={cell.row.original}
