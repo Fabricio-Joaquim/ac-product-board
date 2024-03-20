@@ -16,7 +16,7 @@ export const routes: RouteModel[] = [
   },
   {
     path: RouterEnum.REGISTER_USER,
-    Element: lazy(() => import("../pages/RegisterUser/Register")),
+    Element: lazy(() => import("../pages/Register/User/RegisterUSer")),
     isPrivate: false,
   },
   {
@@ -26,12 +26,12 @@ export const routes: RouteModel[] = [
   },
   {
     path: RouterEnum.CREATE_PRODUCT,
-    Element: lazy(() => import("../pages/RegisterProduct/RegisterProduct")),
+    Element: lazy(() => import("../pages/Register/Product/RegisterProduct")),
     isPrivate: true,
   },
   {
     path: `${RouterEnum.UPDATE_PRODUCT}/:id`,
-    Element: lazy(() => import("../pages/RegisterProduct/RegisterProduct")),
+    Element: lazy(() => import("../pages/Register/Product/RegisterProduct")),
     isPrivate: true,
   },
 ];

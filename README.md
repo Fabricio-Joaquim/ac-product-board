@@ -21,7 +21,17 @@
 
 ## Notes
 
-### Api used in this project is [fake-api-jwt-json-server](https://github.com/techiediaries/fake-api-jwt-json-server)
+### Api used in this project is [fake-api](https://github.com/jonatasesdras02/api-avalicao-front)
+
+```
+clone the project-api -> -> ↑
+
+run the command `npm install` and `npm run start-auth` to start the api
+````
+
+## OBS
+- en: There is a bug in the API that does not recognize the newly registered user, so it is necessary after registering a user to restart the API before accessing it.
+- pt: Existe um bug na API que não reconhece o usuário recém cadastrado, então é necessário após cadastrar um usuário reiniciar a API antes de acessa-la.
 
 ## Commands
 
@@ -63,3 +73,9 @@ npm run serve
   ```bash
   npm run test:e2e:ci
   ```
+
+## Example of use
+<video width="920" height="440" controls>
+  <source src="example/example.mp4" type="video/mp4">
+  Seu navegador não suporta o elemento de vídeo.
+</video>

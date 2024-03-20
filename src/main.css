@@ -30,7 +30,9 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #EFF6FF inset;
+}
 img,
 picture,
 video,

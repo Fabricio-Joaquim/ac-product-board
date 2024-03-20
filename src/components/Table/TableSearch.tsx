@@ -22,7 +22,7 @@ export const TableSearch = ({
             focus:ring-0 focus:outline-none
           "
         type="text"
-        placeholder="Search"
+        placeholder="Procurar"
         onChange={handlerChangeSearch}
       />
       {search && (

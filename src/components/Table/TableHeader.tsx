@@ -17,7 +17,7 @@ export const TableHeader = ({ table }: { table: Table<unknown> }) => (
                 <div
                   {...{
                     className: header.column.getCanSort()
-                      ? "cursor-pointer hover:bg-slate-50 duration-300 hover:border-1 hover:border-black select-none flex items-center gap-1"
+                      ? "cursor-pointer duration-300 hover:border-1 hover:border-black select-none flex items-center gap-1"
                       : " flex items-center gap-1",
                     onClick: header.column.getToggleSortingHandler(),
                   }}
