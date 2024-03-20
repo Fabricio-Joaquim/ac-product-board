@@ -41,12 +41,6 @@ run the command `npm install` and `npm run start-auth` to start the api
 npm run lint
 ```
 
-### .env file
-
-```bash
-VITE_API_URL=http://localhost:8000
-```
-
 ### Build commands
 
 ```bash
@@ -75,7 +69,6 @@ npm run serve
   ```
 
 ## Example of use
-<video width="920" height="440" controls>
-  <source src="example/example.mp4" type="video/mp4">
-  Seu navegador não suporta o elemento de vídeo.
-</video>
+
+https://github.com/Fabricio-Joaquim/ac-product-board/assets/45011367/54bef84e-c6a7-4b3f-b062-8e4a945af63e
+
